@@ -1,9 +1,9 @@
 <?php
 session_start();//1번째 방식
-$SelectS=$_POST[""/*form에서 받아올 날짜 및 요일 변수*/""]; //get으로 받을 수 있음 -> 날짜, 요
+$Select=$_POST[""/*form에서 받아올 날짜 및 요일 변수*/""]; //get으로 받을 수 있음 -> 날짜, 요
 
 $con= mysqli_connect("localhost", "root", "", //테이블 );
-$sql="select * from "/*테이블 명*/" where check_in_date >= '$Scheck_in'";
+$sql="select * from "/*테이블 명*/" where /*속성명*/ >= '$비교'";
 $res=mysqli_query($con,$sql);
 $num_math = mysqli_num_rows($res);
 
@@ -20,7 +20,7 @@ while($row=mysqli_fetch_array($res)){
   break;
 };
 
-$_SESSION["date"]=serialize($sss);
+$_SESSION[""/*테이블*/""]=serialize($sss);
 
 echo ("<script> location.href='/*파일경로*/'</script>");
 
